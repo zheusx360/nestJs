@@ -1,14 +1,14 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
-import { Course } from "./entities/cource.entity";
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { Course } from './entities/cource.entity';
 
 @Injectable()
 export class CoursesService {
   private courses: Course[] = [
     {
       id: 1,
-      name: "NestJs",
-      description: "Estudo dos fundamentos do NestJs",
-      tags: ["node.js", "nestjs", "javascript"],
+      name: 'NestJs',
+      description: 'Estudo dos fundamentos do NestJs',
+      tags: ['node.js', 'nestjs', 'javascript'],
     },
   ];
 
@@ -32,6 +32,7 @@ export class CoursesService {
 
   create(createCourseDto: any) {
     this.courses.push(createCourseDto);
+    return createCourseDto;
   }
 
   update(id: string, updateCourseDto: any) {
